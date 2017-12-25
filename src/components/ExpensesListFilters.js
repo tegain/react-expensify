@@ -57,9 +57,9 @@ export class ExpensesListFilters extends React.Component {
 
 				<DateRangePicker
 					startDate={this.props.filters.startDate}
-					startDateId="start"
 					endDate={this.props.filters.endDate}
-					endDateId="end"
+					startDateId="startDate"
+					endDateId="endDate"
 					onDatesChange={this.onDatesChange}
 					focusedInput={this.state.calendarFocused}
 					onFocusChange={this.onFocusChange}
@@ -79,7 +79,7 @@ const mapDispatchToProps = (dispatch) => ({
 	sortByDate: () => dispatch(sortByDate()),
 	sortByAmount: () => dispatch(sortByAmount()),
 	setStartDate: (startDate) => dispatch(setStartDate(startDate)),
-	setEndDate: (endDate) => dispatch(setStartDate(endDate))
+	setEndDate: (endDate) => dispatch(setEndDate(endDate))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpensesListFilters)
