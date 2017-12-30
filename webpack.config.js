@@ -1,15 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const dotenv = require('dotenv')
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
 // Read the right .env file depending on the NODE_ENV
 if (process.env.NODE_ENV === 'test') {
-	dotenv.config({ path: '.env.test' })
+	require('dotenv').config({ path: '.env.test' })
 } else if (process.env.NODE_ENV === 'development') {
-	dotenv.config({ path: '.env.development' })
+	require('dotenv').config({ path: '.env.development' })
 }
 
 // Use '--env' param used in package.json script
