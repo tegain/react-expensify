@@ -42,6 +42,31 @@ Basic jest.config.json file
 }
 ```
 
+## Firebase
+
+### Config
+
+#### For test and development environments
+
+Create 2 Firebase databases (real one, and test one).
+Set config in `.env` files, as `KEY=value` properties.
+
+Set the environment variables in `webpack.config.js` file (as a `new webpack.DefinePlugin()`)
+
+Then, in the `/src/firebase/firebase.js` file, get the `process.env.FIREBASE_XX` variables.
+
+#### For production environment, with Heroku
+
+Access the Heroku config CLI:
+```
+heroku config
+```
+
+Then set each `FIREBASE_XX` variable a new variable as a `KEY=value` pair:
+```
+heroku config:set FIREBASE_XX=value FIREBASE_YY=value etc.
+```
+
 ## Deployment
 
 Using Heroku CLI
