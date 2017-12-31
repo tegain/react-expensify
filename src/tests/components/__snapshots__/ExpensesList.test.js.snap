@@ -6,7 +6,7 @@ exports[`should render <ExpensesList /> with expenses 1`] = `
     amount={195}
     createdAt={0}
     description="Rent"
-    id={1}
+    id="1"
     key="1"
     note=""
   />
@@ -14,7 +14,7 @@ exports[`should render <ExpensesList /> with expenses 1`] = `
     amount={1050}
     createdAt={-345600000}
     description="Gas bill"
-    id={2}
+    id="2"
     key="2"
     note="That's pretty expensive!"
   />
@@ -22,7 +22,7 @@ exports[`should render <ExpensesList /> with expenses 1`] = `
     amount={825}
     createdAt={345600000}
     description="Internet bill"
-    id={3}
+    id="3"
     key="3"
     note=""
   />
