@@ -67,6 +67,50 @@ Then set each `FIREBASE_XX` variable a new variable as a `KEY=value` pair:
 heroku config:set FIREBASE_XX=value FIREBASE_YY=value etc.
 ```
 
+### Config Firebase security
+
+On the "Rules" pages on Firebase console, we can add rules for data validation, as following.
+See doc.:
+- https://firebase.google.com/docs/reference/security/database/
+- https://firebase.google.com/docs/database/security/user-security
+
+```json
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        ".write": "$user_id === auth.uid",
+        "expenses": {
+          "$expense_id": {
+          	".validate": "newData.hasChildren(['description', 'amount', 'note', 'createdAt'])",
+          	"description": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            },
+            "note": {
+              ".validate": "newData.isString()"
+            },
+            "amount": {
+              ".validate": "newData.isNumber()"
+            },
+            "createdAt": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }  
+  }
+```
+
 ## Deployment
 
 Using Heroku CLI

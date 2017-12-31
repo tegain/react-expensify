@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2df0fa7-2c69-488a-9e66-ea08ef6343fa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/actions/expensesActions.js" afterPath="$PROJECT_DIR$/src/actions/expensesActions.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader.js" afterPath="$PROJECT_DIR$/src/components/AppHeader.js" />
-      <change beforePath="$PROJECT_DIR$/src/routers/AppRouter.js" afterPath="$PROJECT_DIR$/src/routers/AppRouter.js" />
-      <change beforePath="$PROJECT_DIR$/src/routers/PrivateRoute.js" afterPath="$PROJECT_DIR$/src/routers/PrivateRoute.js" />
-      <change beforePath="$PROJECT_DIR$/src/store/configureStore.js" afterPath="$PROJECT_DIR$/src/store/configureStore.js" />
-      <change beforePath="$PROJECT_DIR$/src/tests/actions/expensesActions.test.js" afterPath="$PROJECT_DIR$/src/tests/actions/expensesActions.test.js" />
-      <change beforePath="$PROJECT_DIR$/src/tests/components/__snapshots__/AppHeader.test.js.snap" afterPath="$PROJECT_DIR$/src/tests/components/__snapshots__/AppHeader.test.js.snap" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configureStore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="configureStore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
@@ -49,6 +42,45 @@
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firebase.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/firebase/firebase.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="312">
+                <caret line="78" column="12" lean-forward="true" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
+                <folding>
+                  <marker date="1514759277571" expanded="true" signature="439:692" ph="{...}" />
+                  <marker date="1514759277571" expanded="true" signature="457:596" ph="[...]" />
+                  <marker date="1514759277571" expanded="true" signature="623:690" ph="[...]" />
+                  <marker date="1514759277571" expanded="true" signature="1581:2454" ph="{...}" />
+                  <marker date="1514759277571" expanded="true" signature="1594:2454" ph="{&quot;.read&quot;: false...}" />
+                  <marker date="1514759277571" expanded="true" signature="1650:2448" ph="{...}" />
+                  <marker date="1514759277571" expanded="true" signature="1670:2442" ph="{&quot;.read&quot;: &quot;$user_id === auth.uid&quot;...}" />
+                  <marker date="1514759277571" expanded="true" signature="1777:2374" ph="{...}" />
+                  <marker date="1514759277571" expanded="true" signature="1804:2364" ph="{&quot;.validate&quot;: &quot;newData.hasChildren(['description', 'amount', 'note', 'createdAt'])&quot;...}" />
+                  <marker date="1514759277571" expanded="true" signature="1927:2018" ph="{&quot;.validate&quot;: &quot;newData.isString() &amp;&amp; newData.val().length &gt; 0&quot;...}" />
+                  <marker date="1514759277571" expanded="true" signature="2040:2103" ph="{&quot;.validate&quot;: &quot;newData.isString()&quot;...}" />
+                  <marker date="1514759277571" expanded="true" signature="2127:2190" ph="{&quot;.validate&quot;: &quot;newData.isNumber()&quot;...}" />
+                  <marker date="1514759277571" expanded="true" signature="2217:2280" ph="{&quot;.validate&quot;: &quot;newData.isNumber()&quot;...}" />
+                  <marker date="1514759277571" expanded="true" signature="2304:2352" ph="{&quot;.validate&quot;: false...}" />
+                  <marker date="1514759277571" expanded="true" signature="2394:2434" ph="{&quot;.validate&quot;: false...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -100,7 +132,6 @@
         <option value="$PROJECT_DIR$/src/playground/promises.js" />
         <option value="$PROJECT_DIR$/.env.development" />
         <option value="$PROJECT_DIR$/.env.test" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/tests/setupTests.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -128,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/actions/expensesActions.js" />
         <option value="$PROJECT_DIR$/src/tests/actions/expensesActions.test.js" />
         <option value="$PROJECT_DIR$/src/store/configureStore.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -409,7 +441,7 @@
       <workItem from="1514533134967" duration="88000" />
       <workItem from="1514660429497" duration="15483000" />
       <workItem from="1514715923768" duration="1001000" />
-      <workItem from="1514718886292" duration="26902000" />
+      <workItem from="1514718886292" duration="27734000" />
     </task>
     <servers />
   </component>
@@ -419,7 +451,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281858000" />
+    <option name="totallyTimeSpent" value="282690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="439" y="0" width="1481" height="1046" extended-state="0" />
@@ -590,16 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -845,14 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/firebase/firebase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/authReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -936,6 +950,41 @@
           <folding>
             <element signature="e#0#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firebase/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="312">
+            <caret line="78" column="12" lean-forward="true" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
+            <folding>
+              <marker date="1514759277571" expanded="true" signature="439:692" ph="{...}" />
+              <marker date="1514759277571" expanded="true" signature="457:596" ph="[...]" />
+              <marker date="1514759277571" expanded="true" signature="623:690" ph="[...]" />
+              <marker date="1514759277571" expanded="true" signature="1581:2454" ph="{...}" />
+              <marker date="1514759277571" expanded="true" signature="1594:2454" ph="{&quot;.read&quot;: false...}" />
+              <marker date="1514759277571" expanded="true" signature="1650:2448" ph="{...}" />
+              <marker date="1514759277571" expanded="true" signature="1670:2442" ph="{&quot;.read&quot;: &quot;$user_id === auth.uid&quot;...}" />
+              <marker date="1514759277571" expanded="true" signature="1777:2374" ph="{...}" />
+              <marker date="1514759277571" expanded="true" signature="1804:2364" ph="{&quot;.validate&quot;: &quot;newData.hasChildren(['description', 'amount', 'note', 'createdAt'])&quot;...}" />
+              <marker date="1514759277571" expanded="true" signature="1927:2018" ph="{&quot;.validate&quot;: &quot;newData.isString() &amp;&amp; newData.val().length &gt; 0&quot;...}" />
+              <marker date="1514759277571" expanded="true" signature="2040:2103" ph="{&quot;.validate&quot;: &quot;newData.isString()&quot;...}" />
+              <marker date="1514759277571" expanded="true" signature="2127:2190" ph="{&quot;.validate&quot;: &quot;newData.isNumber()&quot;...}" />
+              <marker date="1514759277571" expanded="true" signature="2217:2280" ph="{&quot;.validate&quot;: &quot;newData.isNumber()&quot;...}" />
+              <marker date="1514759277571" expanded="true" signature="2304:2352" ph="{&quot;.validate&quot;: false...}" />
+              <marker date="1514759277571" expanded="true" signature="2394:2434" ph="{&quot;.validate&quot;: false...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
