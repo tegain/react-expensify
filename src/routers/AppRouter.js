@@ -1,11 +1,23 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory'
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage'
 import AddExpensePage from '../components/AddExpensePage'
 import EditExpensePage from '../components/EditExpensePage'
-import HelpPage from '../components/HelpPage'
 import NotFoundPage from '../components/NotFoundPage'
-import AppHeader from '../components/AppHeader'
+import LoginPage from '../components/LoginPage'
+import PrivateRoute from './PrivateRoute'
+
+/**
+ * Create history available from outside of the 'Routed' components
+ * Thus, we need to change <BrowserRouter> into <Router>, which allows to pass an history
+ *
+ * @doc https://reacttraining.com/react-router/web/api/Router
+ *
+ * "The most common use-case for using the low-level <Router>
+ *  is to synchronize a custom history with a state management lib like Redux or Mobx"
+ */
+export const history = createHistory()
 
 const AppRouter = () => (
 	/**
@@ -13,19 +25,17 @@ const AppRouter = () => (
 	 * So, by not providing any 'path' prop, we can create a 404 route:
 	 * Switch will display this component when no other route matches
 	 */
-	<BrowserRouter>
+	<Router history={history}>
 		<div> {/* BrowserRouter Expects single child */}
-			<AppHeader />
-
 			<Switch>
-				<Route path="/" component={ExpenseDashboardPage} exact={true} /> {/* 'exact' required because the '/' matches all the routes... */}
-				<Route path="/create" component={AddExpensePage} />
-				<Route path="/edit/:id" component={EditExpensePage} />
-				<Route path="/help" component={HelpPage} />
-				<Route component={NotFoundPage} /> {/* path is optional */}
+				<Route path="/" component={LoginPage} exact={true} /> {/* 'exact' required because the '/' matches all the routes... */}
+				<PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
+				<PrivateRoute path="/create" component={AddExpensePage} />
+				<PrivateRoute path="/edit/:id" component={EditExpensePage} />
+				<PrivateRoute component={NotFoundPage} /> {/* path is optional */}
 			</Switch>
 		</div>
-	</BrowserRouter>
+	</Router>
 )
 
 export default AppRouter

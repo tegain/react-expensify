@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import expenses from '../fixtures/expenses'
 import { filters, altFilters } from '../fixtures/filters'
 import { ExpensesListFilters } from '../../components/ExpensesListFilters'
 

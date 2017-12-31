@@ -11,7 +11,7 @@ exports[`should render <AppHeader /> correctly 1`] = `
         activeClassName="is-active"
         ariaCurrent="true"
         exact={true}
-        to="/"
+        to="/dashboard"
       >
         Dashboard
       </NavLink>
@@ -26,13 +26,11 @@ exports[`should render <AppHeader /> correctly 1`] = `
       </NavLink>
     </li>
     <li>
-      <NavLink
-        activeClassName="is-active"
-        ariaCurrent="true"
-        to="/help"
+      <button
+        onClick={[Function]}
       >
-        Help
-      </NavLink>
+        Logout
+      </button>
     </li>
   </ul>
 </header>

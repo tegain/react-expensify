@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import AppHeader from '../../components/AppHeader'
+import { AppHeader } from '../../components/AppHeader'
 
 /**
  * Creats a snapshot of the component (logging the rendered component into a file),
@@ -15,6 +15,14 @@ import AppHeader from '../../components/AppHeader'
 // })
 
 test('should render <AppHeader /> correctly', () => {
-	const wrapper = shallow(<AppHeader />)
+	const wrapper = shallow(<AppHeader startLogout={() => {}} />)
 	expect(wrapper).toMatchSnapshot()
+})
+
+test('should call startLogout on button click', () => {
+	const startLogout = jest.fn()
+	const wrapper = shallow(<AppHeader startLogout={startLogout} />)
+
+	wrapper.find('button').simulate('click')
+	expect(startLogout).toHaveBeenCalled()
 })

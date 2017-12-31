@@ -12,6 +12,12 @@ const config = {
 firebase.initializeApp(config)
 
 /**
+ * Tells firebase we want to authenticate with Google
+ * @type {firebase.auth.GoogleAuthProvider}
+ */
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
+
+/**
  * - firebase.database() just access to the database method,
  * as it would with firebase.auth() for authentification methods
  *
@@ -20,4 +26,4 @@ firebase.initializeApp(config)
  */
 const db = firebase.database()
 
-export { firebase, db as default }
+export { firebase, googleAuthProvider, db as default }
