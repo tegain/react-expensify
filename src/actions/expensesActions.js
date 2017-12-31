@@ -65,6 +65,14 @@ export const removeExpense = ({ id } = {}) => ({
 	id
 })
 
+export const startRemoveExpense = ({ id } = {}) => {
+	return (dispatch) => {
+		return db.ref(`expenses/${id}`).remove().then(() => {
+			dispatch(removeExpense({ id }))
+		})
+	}
+}
+
 /**
  * EDIT_EXPENSE Action generator
  * @param id
@@ -78,7 +86,6 @@ export const editExpense = (id, updates) => ({
 })
 
 // SET_EXPENSES
-
 export const setExpenses = (expenses) => ({
 	type: 'SET_EXPENSES',
 	expenses

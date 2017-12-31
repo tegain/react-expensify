@@ -6,6 +6,7 @@ import {
 	addExpense,
 	editExpense,
 	removeExpense,
+	startRemoveExpense,
 	setExpenses,
 	startSetExpenses
 } from '../../actions/expensesActions'
@@ -30,6 +31,28 @@ test('should setup remove expense action object', () => {
 	expect(action).toEqual({
 		type: 'REMOVE_EXPENSE',
 		id: '123-abc'
+	})
+})
+
+test('should remove expenses from database', (done) => {
+	const store = createMockStore({})
+	const id = expenses[0].id
+
+	store.dispatch(startRemoveExpense({ id })).then(() => {
+		const actions = store.getActions()
+
+		expect(actions[0]).toEqual({
+			type: 'REMOVE_EXPENSE',
+			id
+		})
+
+		return database.ref(`expenses/${id}`).once('value')
+	})
+	.then((snapshot) => {
+		// fetching database.ref(`expenses/${id}`) will return `null` if the written expense is actually removed
+		// We can thus expect it to be falsy
+		expect(snapshot.val()).toBeFalsy()
+		done()
 	})
 })
 
