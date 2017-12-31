@@ -7,7 +7,7 @@ export const AppHeader = ({ startLogout }) => (
 	<header>
 		<h1>Expensify</h1>
 		<ul>
-			<li><NavLink to="/dashboard" activeClassName="is-active" exact={true}>Dashboard</NavLink></li>
+			<li><NavLink to="/dashboard" activeClassName="is-active">Dashboard</NavLink></li>
 			<li><NavLink to="/create" activeClassName="is-active">Add new expense</NavLink></li>
 			<li><button onClick={startLogout}>Logout</button></li>
 		</ul>

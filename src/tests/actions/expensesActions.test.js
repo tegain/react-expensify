@@ -16,6 +16,8 @@ import expenses from '../fixtures/expenses'
 // Pass middlewares inside configureStore method
 const middlewares = [thunk]
 const createMockStore = configureMockStore(middlewares)
+const uid = 'thisIsMyFakeUid'
+const defaultAuthState = { auth: { uid } }
 
 beforeEach((done) => {
 	const expensesData = {}
@@ -24,7 +26,7 @@ beforeEach((done) => {
 		expensesData[id] = { description, note, amount, createdAt }
 	})
 
-	database.ref('expenses').set(expensesData).then(() => done())
+	database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done())
 })
 
 test('should setup remove expense action object', () => {
@@ -36,7 +38,7 @@ test('should setup remove expense action object', () => {
 })
 
 test('should remove expenses from database', (done) => {
-	const store = createMockStore({})
+	const store = createMockStore(defaultAuthState) // Create fake store with fake uid
 	const id = expenses[0].id
 
 	store.dispatch(startRemoveExpense({ id })).then(() => {
@@ -47,7 +49,7 @@ test('should remove expenses from database', (done) => {
 			id
 		})
 
-		return database.ref(`expenses/${id}`).once('value')
+		return database.ref(`users/${uid}/expenses/${id}`).once('value')
 	})
 	.then((snapshot) => {
 		// fetching database.ref(`expenses/${id}`) will return `null` if the written expense is actually removed
@@ -69,7 +71,7 @@ test('should setup edit expense action object', () => {
 })
 
 test('should edit expense from Firebase', (done) => {
-	const store = createMockStore({})
+	const store = createMockStore(defaultAuthState) // Create fake store with fake uid
 	const id = expenses[1].id
 	const updates = {
 		description: 'This is my new description'
@@ -85,7 +87,7 @@ test('should edit expense from Firebase', (done) => {
 		})
 
 		// Fetch database, and expect the new description is actually updated
-		return database.ref(`expenses/${id}`).once('value')
+		return database.ref(`users/${uid}/expenses/${id}`).once('value')
 	})
 	.then((snapshot) => {
 		expect(snapshot.val().description).toBe(updates.description)
@@ -94,7 +96,7 @@ test('should edit expense from Firebase', (done) => {
 })
 
 test('should setup add expense action object with provided values', () => {
-	const expenseData = expenses[0] // Replaces old expensewith a dummy one with ID, because firebase requires ID
+	const expenseData = expenses[0] // Replaces old expense with a dummy one with ID, because firebase requires ID
 	const action = addExpense(expenseData)
 
 	expect(action).toEqual({
@@ -114,7 +116,7 @@ test('should add expense to database and store', (done) => {
 	}
 
 	// Set store initial state
-	const store = createMockStore({})
+	const store = createMockStore(defaultAuthState) // Create fake store with fake uid
 
 	// Dispatch action with dummy expense,
 	// then tell jest the test is done()
@@ -133,7 +135,7 @@ test('should add expense to database and store', (done) => {
 
 		// Then, check if database contains the new expense,
 		// Then, tell Jest the test is done()
-		return database.ref(`expenses/${actions[0].expense.id}`).once('value')
+		return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once('value')
 	}).then((snapshot) => {
 		expect(snapshot.val()).toEqual(expenseData)
 		done()
@@ -142,7 +144,7 @@ test('should add expense to database and store', (done) => {
 
 test('should add expense with default to database and store', (done) => {
 	// Set initial state
-	const store = createMockStore({})
+	const store = createMockStore(defaultAuthState) // Create fake store with fake uid
 	const defaultExpense = {
 		description: '',
 		note: '',
@@ -162,7 +164,7 @@ test('should add expense with default to database and store', (done) => {
 			}
 		})
 
-		return database.ref(`expenses/${actions[0].expense.id}`).once('value')
+		return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once('value')
 	}).then((snapshot) => {
 		expect(snapshot.val()).toEqual(defaultExpense)
 		done()
@@ -179,7 +181,7 @@ test('should setup setExpenses action with data', () => {
 })
 
 test('should fetch data from database', (done) => {
-	const store = createMockStore({})
+	const store = createMockStore(defaultAuthState) // Create fake store with fake uid
 
 	store.dispatch(startSetExpenses()).then(() => {
 		const actions = store.getActions()

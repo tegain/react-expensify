@@ -6,6 +6,9 @@ import authReducer from '../reducers/authReducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
+/**
+ * A thunk is a function that wraps an expression to delay its evaluation.
+ */
 export default () => {
 	const store = createStore(
 		combineReducers({

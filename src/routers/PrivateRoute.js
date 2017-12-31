@@ -5,6 +5,9 @@ import AppHeader from '../components/AppHeader'
 
 /**
  * Wrapper component around <Route> to add conditional logic to the app routing
+ *
+ * When logged in, display private component
+ * Otherwise, redirect to login page
  */
 export const PrivateRoute = ({
 	isAuthenticated,
