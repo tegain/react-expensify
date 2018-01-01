@@ -5,17 +5,23 @@ import selectExpenses from '../selectors/expensesSelectors'
 
 // Takes props from the Connected Component
 export const ExpensesList = (props) => (
-	<div>
-		{
-			props.expenses.length === 0 ? (
-				<p>No expenses</p>
-			) : (
-				props.expenses.map((expense) => (
-					// <ExpensesListItem key={expense.id} expense={expense} /> // Also works, but ExpensesListItem must use 'props.expenses.foo'
-					<ExpensesListItem key={expense.id} {...expense} /> // Deconstruct expenses properties
-				))
-			)
-		}
+	<div className="expenses">
+		<div className="expenses-header">
+			<span className="expenses-header__expense">Expense</span>
+			<span className="expenses-header__amount">Amount</span>
+		</div>
+
+		<div className="expenses-list">
+			{
+				props.expenses.length === 0 ? (
+					<p className="expenses-list__empty">No expenses</p>
+				) : (
+					props.expenses.map((expense) => (
+						<ExpensesListItem key={expense.id} {...expense} /> // Deconstruct expenses properties
+					))
+				)
+			}
+		</div>
 	</div>
 )
 

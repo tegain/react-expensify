@@ -6,6 +6,7 @@ import { firebase } from './firebase/firebase'
 import configureStore from './store/configureStore'
 import { startSetExpenses } from './actions/expensesActions'
 import { login, logout } from './actions/authActions'
+import LoadingPage from './components/LoadingPage'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 import 'react-dates/lib/css/_datepicker.css'
@@ -34,7 +35,7 @@ const renderApp = () => {
 	}
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'))
+ReactDOM.render(<LoadingPage />, document.getElementById('root'))
 
 // Access Firebase Auth service,
 // Watch Auth state change

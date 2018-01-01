@@ -1,28 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseForm correctly 1`] = `
-<div>
+<div
+  className="input-group"
+>
   <form
+    className="expenses-form"
     onSubmit={[Function]}
   >
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
         autoFocus={true}
+        className="text-input"
         onChange={[Function]}
         placeholder="Description"
         type="text"
         value=""
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
+        className="text-input"
         onChange={[Function]}
         placeholder="Amount"
         type="text"
         value=""
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <withStyles(SingleDatePicker)
         anchorDirection="left"
         block={false}
@@ -114,9 +125,10 @@ exports[`should render ExpenseForm correctly 1`] = `
     </div>
     <div>
       <button
+        className="button button--blue"
         type="submit"
       >
-        Add Expense
+        Save Expense
       </button>
     </div>
   </form>
@@ -124,28 +136,39 @@ exports[`should render ExpenseForm correctly 1`] = `
 `;
 
 exports[`should render ExpenseForm with expense data 1`] = `
-<div>
+<div
+  className="input-group"
+>
   <form
+    className="expenses-form"
     onSubmit={[Function]}
   >
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
         autoFocus={true}
+        className="text-input"
         onChange={[Function]}
         placeholder="Description"
         type="text"
         value="Gas bill"
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
+        className="text-input"
         onChange={[Function]}
         placeholder="Amount"
         type="text"
         value="10.5"
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <withStyles(SingleDatePicker)
         anchorDirection="left"
         block={false}
@@ -237,9 +260,10 @@ exports[`should render ExpenseForm with expense data 1`] = `
     </div>
     <div>
       <button
+        className="button button--blue"
         type="submit"
       >
-        Add Expense
+        Save Expense
       </button>
     </div>
   </form>
@@ -247,28 +271,39 @@ exports[`should render ExpenseForm with expense data 1`] = `
 `;
 
 exports[`should render error message for invalid form submission 1`] = `
-<div>
+<div
+  className="input-group"
+>
   <form
+    className="expenses-form"
     onSubmit={[Function]}
   >
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
         autoFocus={true}
+        className="text-input"
         onChange={[Function]}
         placeholder="Description"
         type="text"
         value=""
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
+        className="text-input"
         onChange={[Function]}
         placeholder="Amount"
         type="text"
         value=""
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <withStyles(SingleDatePicker)
         anchorDirection="left"
         block={false}
@@ -360,9 +395,10 @@ exports[`should render error message for invalid form submission 1`] = `
     </div>
     <div>
       <button
+        className="button button--blue"
         type="submit"
       >
-        Add Expense
+        Save Expense
       </button>
     </div>
   </form>
@@ -370,31 +406,42 @@ exports[`should render error message for invalid form submission 1`] = `
 `;
 
 exports[`should render error message for invalid form submission 2`] = `
-<div>
+<div
+  className="input-group"
+>
   <p>
     Please provide description and amount
   </p>
   <form
+    className="expenses-form"
     onSubmit={[Function]}
   >
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
         autoFocus={true}
+        className="text-input"
         onChange={[Function]}
         placeholder="Description"
         type="text"
         value=""
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <input
+        className="text-input"
         onChange={[Function]}
         placeholder="Amount"
         type="text"
         value=""
       />
     </div>
-    <div>
+    <div
+      className="input-group__item"
+    >
       <withStyles(SingleDatePicker)
         anchorDirection="left"
         block={false}
@@ -486,9 +533,10 @@ exports[`should render error message for invalid form submission 2`] = `
     </div>
     <div>
       <button
+        className="button button--blue"
         type="submit"
       >
-        Add Expense
+        Save Expense
       </button>
     </div>
   </form>

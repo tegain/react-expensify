@@ -79,13 +79,14 @@ export default class ExpenseForm extends React.Component {
 
 	render () {
 		return (
-			<div>
+			<div className="input-group">
 				{this.state.error && <p>{this.state.error}</p>}
 
-				<form onSubmit={this.onSubmit}>
-					<div>
+				<form onSubmit={this.onSubmit} className="expenses-form">
+					<div className="input-group__item">
 						<input
 							type="text"
+							className="text-input"
 							placeholder="Description"
 							autoFocus
 							value={this.state.description}
@@ -93,16 +94,17 @@ export default class ExpenseForm extends React.Component {
 						/>
 					</div>
 
-					<div>
+					<div className="input-group__item">
 						<input
 							type="text"
+							className="text-input"
 							placeholder="Amount"
 							value={this.state.amount}
 							onChange={this.onAmountChange}
 						/>
 					</div>
 
-					<div>
+					<div className="input-group__item">
 						<SingleDatePicker
 							date={this.state.createdAt}
 							onDateChange={this.onDateChange}
@@ -123,7 +125,12 @@ export default class ExpenseForm extends React.Component {
 					</div>
 
 					<div>
-						<button type="submit">Add Expense</button>
+						<button
+							type="submit"
+							className="button button--blue"
+						>
+							Save Expense
+						</button>
 					</div>
 				</form>
 			</div>

@@ -1,38 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render <ExpensesList /> with expenses 1`] = `
-<div>
-  <ExpensesListItem
-    amount={195}
-    createdAt={0}
-    description="Rent"
-    id="1"
-    key="1"
-    note=""
-  />
-  <ExpensesListItem
-    amount={1050}
-    createdAt={-345600000}
-    description="Gas bill"
-    id="2"
-    key="2"
-    note="That's pretty expensive!"
-  />
-  <ExpensesListItem
-    amount={825}
-    createdAt={345600000}
-    description="Internet bill"
-    id="3"
-    key="3"
-    note=""
-  />
+<div
+  className="expenses"
+>
+  <div
+    className="expenses-header"
+  >
+    <span
+      className="expenses-header__expense"
+    >
+      Expense
+    </span>
+    <span
+      className="expenses-header__amount"
+    >
+      Amount
+    </span>
+  </div>
+  <div
+    className="expenses-list"
+  >
+    <ExpensesListItem
+      amount={195}
+      createdAt={0}
+      description="Rent"
+      id="1"
+      key="1"
+      note=""
+    />
+    <ExpensesListItem
+      amount={1050}
+      createdAt={-345600000}
+      description="Gas bill"
+      id="2"
+      key="2"
+      note="That's pretty expensive!"
+    />
+    <ExpensesListItem
+      amount={825}
+      createdAt={345600000}
+      description="Internet bill"
+      id="3"
+      key="3"
+      note=""
+    />
+  </div>
 </div>
 `;
 
 exports[`should render ExpensesList with empty message 1`] = `
-<div>
-  <p>
-    No expenses
-  </p>
+<div
+  className="expenses"
+>
+  <div
+    className="expenses-header"
+  >
+    <span
+      className="expenses-header__expense"
+    >
+      Expense
+    </span>
+    <span
+      className="expenses-header__amount"
+    >
+      Amount
+    </span>
+  </div>
+  <div
+    className="expenses-list"
+  >
+    <p
+      className="expenses-list__empty"
+    >
+      No expenses
+    </p>
+  </div>
 </div>
 `;
