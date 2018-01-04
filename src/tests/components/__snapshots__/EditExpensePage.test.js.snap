@@ -41,5 +41,13 @@ exports[`should render EditExpensePage correctly 1`] = `
       </button>
     </div>
   </div>
+  <Connect(ExpenseRemoveModal)
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    onClearRemoveExpense={[Function]}
+  />
 </div>
 `;

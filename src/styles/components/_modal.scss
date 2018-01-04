@@ -1,0 +1,44 @@
+.ReactModal {
+	&__Overlay {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__Content {
+		box-shadow: 0 .25rem 4rem rgba($dark-gray, .25);
+		background: #fff;
+	}
+
+	&__inner {
+		padding: $m-size $xl-size;
+
+		p {
+			margin-top: 0;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		color: #fff;
+		background: $blue;
+		padding: $m-size $xl-size;
+	}
+
+	&__actions {
+		text-align: center;
+
+		button {
+			display: inline-block;
+			margin: 0 .5rem;
+		}
+
+		.button--transparent {
+			color: $dark-gray;
+
+			&:hover {
+				background: #f5f5f5;
+			}
+		}
+	}
+}

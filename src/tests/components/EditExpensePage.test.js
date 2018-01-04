@@ -1,4 +1,6 @@
 import React from 'react'
+import { findDOMNode } from 'react-dom'
+import Modal from 'react-modal'
 import { shallow } from 'enzyme'
 import expenses from '../fixtures/expenses'
 import { EditExpensePage } from '../../components/EditExpensePage'
@@ -29,8 +31,16 @@ test('should handle startEditExpense', () => {
 	expect(startEditExpense).toHaveBeenLastCalledWith(expenses[1].id, expenses[1])
 })
 
-test('should handle startRemoveExpense', () => {
-	wrapper.find('button').simulate('click')
-	expect(history.push).toHaveBeenLastCalledWith('/')
-	expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expenses[1].id })
-})
+// test('should open modal on click', () => {
+// 	wrapper.find('.button--ghost').simulate('click')
+// 	const portalNode = findDOMNode(
+// 		wrapper.find(Modal).getElement().portal
+// 	);
+// 	expect(portalNode.prop('isOpen')).toEqual(true)
+// })
+
+// test('should handle startRemoveExpense', () => {
+// 	wrapper.find('button').simulate('click')
+// 	expect(history.push).toHaveBeenLastCalledWith('/')
+// 	expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expenses[1].id })
+// })
