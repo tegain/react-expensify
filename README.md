@@ -1,5 +1,11 @@
 # React Expensify
 
+## TODO
+- [x] Add confirmation modal when removing expense
+- [x] Show number of hidden expenses on Dashboard page's summary
+- [ ] Add support for others Auth providers (Facebook, Github...)
+- [ ] Buy app's own domain and configure it with Heroku
+
 ## Dev
 ```
 # Start dev server
