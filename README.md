@@ -131,6 +131,10 @@ Heroku will then run Webpack (the production build) using the `heroku-postbuild`
 heroku login
 ```
 ```
+# Sync SSH key with Heroku
+heroku keys:add
+```
+```
 # Create new app
 heroku create <app_name>
 ```
